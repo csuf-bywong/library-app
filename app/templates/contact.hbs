@@ -1,0 +1,32 @@
+<div class="jumbotron text-center">
+  <h1>Contact Page</h1>
+
+  <p>If you have questions or any feedback, leave a message.</p>
+
+  <br/><br/>
+
+  <div class="form-group contact">
+
+    <div class="col-md-6">
+      {{#if responseMessage}}
+
+        <div class="alert alert-success">{{responseMessage}}</div>
+
+      {{else}}
+
+        <div class="form-group contact {{if isValidEmail 'has-success'}}">
+          <label>Your email address:</label> {{input type="email" class="form-control" placeholder="Your email address" value=emailAddress autofocus="autofocus"}}
+          {{#if isValidEmail}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+        </div>
+        <div class="form-group has-feedback {{if isMessageEnoughLong 'has-success'}}">
+          <label>Your message:</label> {{textarea class="form-control" placeholder="Your message. (At least 5 characters.)" rows="5" value=message}}
+          {{#if isMessageEnoughLong}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+        </div>
+        <button class="btn btn-success" {{action 'sendMessage'}} disabled= {{isDisabled}}>Send</button>
+
+      {{/if}}
+
+
+    </div>
+  </div>
+</div>
