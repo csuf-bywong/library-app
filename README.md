@@ -1,3 +1,9 @@
+CPSC 473-02
+library-app - Assignment 8
+Prof Avery
+
+Author: Belinda Wong
+
 # library-app
 
 This README outlines the details of collaborating on this Ember application.
